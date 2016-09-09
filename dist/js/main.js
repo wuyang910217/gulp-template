@@ -1,4 +1,2 @@
-function demo(){
-  console.log('demo---------');
-}
-demo();
+function demo(){console.log("demo---------")}demo(),console.log("in test file");
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiLCJ0ZXN0LmpzIl0sIm5hbWVzIjpbImRlbW8iLCJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiQUFBQSxRQUFBQSxRQUNBQyxRQUFBQyxJQUFBLGlCQUVBRixPQ0hBQyxRQUFBQyxJQUFBIiwiZmlsZSI6Im1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBkZW1vKCl7XG4gIGNvbnNvbGUubG9nKCdkZW1vLS0tLS0tLS0tJyk7XG59XG5kZW1vKCk7XG4iLCJjb25zb2xlLmxvZygnaW4gdGVzdCBmaWxlJyk7XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
