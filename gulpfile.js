@@ -2,7 +2,9 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     prefix = require('gulp-autoprefixer'),
     wrap = require('gulp-wrap'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant');
 
 gulp.task('buildHome', function(){
   gulp.src('./source/pages/index.html')
@@ -14,6 +16,21 @@ gulp.task('buildMain', function(){
   gulp.src('./source/pages/main.html')
           .pipe(wrap({src:'source/layout/main_layout.html'}))
           .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('cp', function(){
+  gulp.src('./source/js/main.js',)
+          .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('imagemin', function(){
+  gulp.src('./source/assets/*')
+          .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: flase}],
+            use: [pngquant()]
+          }))
+          .pipe(gulp.dest('./dist/assets'));
 });
 
 function handleError(err){
@@ -44,6 +61,7 @@ gulp.task('rebuild',['buildHome','buildMain'], function(){
 gulp.task('watch', function(){
   gulp.watch(['**/*.html'], ['rebuild']);
   gulp.watch(['source/styles/*.scss'], ['sass']);
+  gulp.watch(['source/js/main.js'], ['cp']);
 });
 
-gulp.task('default', ['browser-sync','watch']);
+gulp.task('default', ['browser-sync','watch','imagemin']);
